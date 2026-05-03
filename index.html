@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>个人科技感主页</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>欢迎来到我的个人网站</h1>
+    <nav>
+      <a href="#gallery">作品展示</a>
+      <a href="#video">视频演示</a>
+      <a href="#contact">联系我</a>
+      <a href="#board">留言板</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="gallery">
+      <h2>作品展示</h2>
+      <div class="carousel">
+        <div class="carousel-track">
+          <img src="https://via.placeholder.com/400x200?text=作品1" alt="作品1">
+          <img src="https://via.placeholder.com/400x200?text=作品2" alt="作品2">
+          <img src="https://via.placeholder.com/400x200?text=作品3" alt="作品3">
+        </div>
+      </div>
+    </section>
+
+    <section id="video">
+      <h2>视频演示</h2>
+      <video controls>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        你的浏览器不支持视频播放
+      </video>
+    </section>
+
+    <section id="contact">
+      <h2>联系我</h2>
+      <form id="contactForm">
+        <input type="text" placeholder="姓名" required>
+        <input type="email" placeholder="邮箱" required>
+        <textarea placeholder="留言" required></textarea>
+        <button type="submit">提交</button>
+      </form>
+    </section>
+
+    <section id="board">
+      <h2>留言板</h2>
+      <form id="msgForm">
+        <input type="text" id="msgName" placeholder="你的名字" required>
+        <textarea id="msgContent" placeholder="留言内容" required></textarea>
+        <button type="submit">留言</button>
+      </form>
+      <div id="messages"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 gdYangchun</p>
+    <div id="social">
+      <a href="#">微博</a>
+      <a href="#">微信</a>
+      <a href="#">GitHub</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
