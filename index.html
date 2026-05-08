@@ -1,17 +1,94 @@
 <!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>老谢个人主页</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+
+<body>
+
+<div id="particles-js"></div>
+
+<header>
+  <h1>欢迎来到我的个人网站</h1>
+
+  <nav>
+    <a href="#gallery">作品展示</a>
+    <a href="#video">视频演示</a>
+    <a href="#contact">联系我</a>
+    <a href="#board">留言板</a>
+  </nav>
+</header>
+
+<main>
+
+  <section id="gallery">
+    <h2>作品展示</h2>
+
+    <div class="carousel">
+      <div class="carousel-track">
+        <img src="images/work1.jpg" alt="作品1">
+        <img src="images/work2.jpg" alt="作品2">
+        <img src="images/work3.jpg" alt="作品3">
+      </div>
+    </div>
+  </section>
+
+  <section id="video">
+    <h2>视频演示</h2>
+
+    <video controls width="100%">
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+    </video>
+  </section>
+
+  <section id="contact">
+    <h2>联系我</h2>
+
+    <form action="https://formsubmit.co/411185785@qq.com" method="POST">
+
+      <input type="text" name="name" placeholder="姓名" required>
+
+      <input type="email" name="email" placeholder="邮箱" required>
+
+      <textarea name="message" placeholder="留言" required></textarea>
+
+      <input type="hidden" name="_captcha" value="false">
+
+      <input type="hidden" name="_next" value="https://gdyangchun.de5.net">
+
+      <button type="submit">提交</button>
+
+    </form>
+  </section>
+
+  <section id="board">
+    <h2>留言板</h2>
+
+    <form id="msgForm">
+
       <input type="text" id="msgName" placeholder="你的名字" required>
 
       <textarea id="msgContent" placeholder="留言内容" required></textarea>
 
       <button type="submit">留言</button>
+
     </form>
 
     <div id="messages"></div>
+
   </section>
 
 </main>
 
 <footer>
+
   <p>© 2026 GDyangchun</p>
 
   <div id="social">
@@ -19,6 +96,7 @@
     <a href="#">微信</a>
     <a href="#">GitHub</a>
   </div>
+
 </footer>
 
 <script src="script.js"></script>
