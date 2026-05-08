@@ -37,8 +37,8 @@ section {
   max-width: 800px;
   background: rgba(255,255,255,0.05);
   border-radius: 10px;
-  opacity: 0;
-  transform: translateY(30px);
+  opacity: 1;
+  transform: translateY(0);
   transition: all 1s ease;
 }
 
@@ -115,4 +115,14 @@ footer {
   z-index: -1;
   top: 0;
   left: 0;
+}
+header,
+main,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+body {
+  color: white;
 }
