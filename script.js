@@ -14,3 +14,20 @@ form.addEventListener("submit", function(e) {
 
   form.reset();
 });
+
+const track = document.getElementById("carouselTrack");
+const images = document.querySelectorAll(".carousel-track img");
+
+let index = 0;
+
+// 自动轮播
+setInterval(() => {
+  index++;
+
+  if (index >= images.length) {
+    index = 0;
+  }
+
+  track.style.transform = `translateX(-${index * 100}%)`;
+
+}, 3000);
