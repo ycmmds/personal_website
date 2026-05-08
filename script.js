@@ -8,7 +8,7 @@ form.addEventListener("submit", function(e) {
   const content = document.getElementById("msgContent").value;
 
   const div = document.createElement("div");
-  div.innerHTML = `<strong>${name}</strong>: ${content}`;
+  div.innerHTML = `<p><strong>${name}</strong>: ${content}</p>`;
 
   messages.prepend(div);
 
