@@ -1,36 +1,108 @@
+// script.js
+
+// ===== 粒子 =====
+
+particlesJS("particles-js",{
+
+  particles:{
+
+    number:{
+      value:90
+    },
+
+    color:{
+      value:"#00ffff"
+    },
+
+    shape:{
+      type:"circle"
+    },
+
+    opacity:{
+      value:.5
+    },
+
+    size:{
+      value:3
+    },
+
+    line_linked:{
+
+      enable:true,
+
+      distance:150,
+
+      color:"#00ffff",
+
+      opacity:.4,
+
+      width:1
+    },
+
+    move:{
+      enable:true,
+      speed:2
+    }
+  },
+
+  interactivity:{
+
+    events:{
+
+      onhover:{
+        enable:true,
+        mode:"repulse"
+      }
+    }
+  }
+});
+
+
 // ===== 高级轮播 =====
 
-const track = document.getElementById("carouselTrack");
-const images = document.querySelectorAll(".carousel-track img");
-const dotsContainer = document.getElementById("dots");
+const track =
+  document.getElementById("carouselTrack");
+
+const images =
+  document.querySelectorAll(".carousel-track img");
+
+const dotsContainer =
+  document.getElementById("dots");
 
 let index = 0;
 
 // 创建dots
-images.forEach((_, i) => {
 
-  const dot = document.createElement("div");
+images.forEach((_,i)=>{
+
+  const dot =
+    document.createElement("div");
 
   dot.classList.add("dot");
 
-  dot.addEventListener("click", () => {
+  dot.addEventListener("click",()=>{
+
     index = i;
+
     updateCarousel();
+
   });
 
   dotsContainer.appendChild(dot);
 
 });
 
-const dots = document.querySelectorAll(".dot");
+const dots =
+  document.querySelectorAll(".dot");
 
 // 更新轮播
-function updateCarousel() {
+
+function updateCarousel(){
 
   track.style.transform =
     `translateX(-${index * 100}%)`;
 
-  dots.forEach(dot =>
+  dots.forEach(dot=>
     dot.classList.remove("active")
   );
 
@@ -38,7 +110,8 @@ function updateCarousel() {
 }
 
 // 自动轮播
-setInterval(() => {
+
+setInterval(()=>{
 
   index++;
 
@@ -48,7 +121,7 @@ setInterval(() => {
 
   updateCarousel();
 
-}, 3000);
+},3000);
 
 updateCarousel();
 
@@ -58,9 +131,9 @@ updateCarousel();
 const sections =
   document.querySelectorAll("section");
 
-window.addEventListener("scroll", () => {
+window.addEventListener("scroll",()=>{
 
-  sections.forEach(section => {
+  sections.forEach(section=>{
 
     const top =
       section.getBoundingClientRect().top;
@@ -75,23 +148,55 @@ window.addEventListener("scroll", () => {
 
 });
 
-// 初始触发
 window.dispatchEvent(new Event("scroll"));
 
 
-// ===== 手机滑动支持 =====
+// ===== 留言板 =====
 
-let startX = 0;
+const form =
+  document.getElementById("msgForm");
 
-track.addEventListener("touchstart", e => {
+const messages =
+  document.getElementById("messages");
 
-  startX = e.touches[0].clientX;
+form.addEventListener("submit",function(e){
+
+  e.preventDefault();
+
+  const name =
+    document.getElementById("msgName").value;
+
+  const content =
+    document.getElementById("msgContent").value;
+
+  const div =
+    document.createElement("div");
+
+  div.innerHTML =
+    `<strong>${name}</strong><br>${content}`;
+
+  messages.prepend(div);
+
+  form.reset();
 
 });
 
-track.addEventListener("touchend", e => {
 
-  let endX = e.changedTouches[0].clientX;
+// ===== 手机滑动 =====
+
+let startX = 0;
+
+track.addEventListener("touchstart",e=>{
+
+  startX =
+    e.touches[0].clientX;
+
+});
+
+track.addEventListener("touchend",e=>{
+
+  let endX =
+    e.changedTouches[0].clientX;
 
   if(startX - endX > 50){
 
