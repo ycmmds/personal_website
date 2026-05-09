@@ -3,12 +3,26 @@
 <html lang="zh-CN">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <title>GDyangchun 科技作品集</title>
+  <meta charset="UTF-8">
 
-  <link rel="stylesheet" href="style.css"/>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    GDyangchun | 科技作品集
+  </title>
+
+  <!-- SEO -->
+  <meta
+    name="description"
+    content="GDyangchun 科技感个人作品集网站"
+  >
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 
   <!-- 粒子 -->
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
@@ -17,7 +31,8 @@
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-  />
+  >
+
 </head>
 
 <body>
@@ -26,7 +41,7 @@
   <div id="particles-js"></div>
 
   <!-- 顶部 -->
-  <header>
+  <header id="header">
 
     <div class="logo">
       GDyangchun
@@ -40,6 +55,8 @@
 
       <a href="#skills">技能</a>
 
+      <a href="#stats">数据</a>
+
       <a href="#video">视频</a>
 
       <a href="#contact">联系</a>
@@ -47,6 +64,11 @@
       <a href="#board">留言</a>
 
     </nav>
+
+    <!-- 深色模式 -->
+    <button id="themeToggle">
+      🌙
+    </button>
 
   </header>
 
@@ -56,11 +78,11 @@
     <div class="hero-content">
 
       <h1>
-        科技感个人作品集
+        商业级科技作品集
       </h1>
 
       <p>
-        科技 · 创意 · 视觉 · 开发
+        Creative · Technology · AI · Design
       </p>
 
       <a href="#gallery" class="hero-btn">
@@ -71,22 +93,83 @@
 
   </section>
 
-  <!-- 作品展示 -->
+  <!-- 数据统计 -->
+  <section id="stats">
+
+    <h2>网站数据</h2>
+
+    <div class="stats-grid">
+
+      <div class="stat-card">
+
+        <h3 id="visitCount">
+          0
+        </h3>
+
+        <p>访问人数</p>
+
+      </div>
+
+      <div class="stat-card">
+
+        <h3>
+          24
+        </h3>
+
+        <p>项目作品</p>
+
+      </div>
+
+      <div class="stat-card">
+
+        <h3>
+          8
+        </h3>
+
+        <p>开发技能</p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- 作品 -->
   <section id="gallery">
 
     <h2>作品展示</h2>
 
     <div class="carousel">
 
-      <div class="carousel-track" id="carouselTrack">
+      <div
+        class="carousel-track"
+        id="carouselTrack"
+      >
 
-        <img src="images/work1.jpg" alt="">
-        <img src="images/work2.jpg" alt="">
-        <img src="images/work3.jpg" alt="">
+        <img
+          src="images/work1.jpg"
+          alt=""
+          class="gallery-img"
+        >
+
+        <img
+          src="images/work2.jpg"
+          alt=""
+          class="gallery-img"
+        >
+
+        <img
+          src="images/work3.jpg"
+          alt=""
+          class="gallery-img"
+        >
 
       </div>
 
-      <div class="dots" id="dots"></div>
+      <div
+        class="dots"
+        id="dots"
+      ></div>
 
     </div>
 
@@ -100,21 +183,39 @@
     <div class="skills-grid">
 
       <div class="skill-card">
+
         <i class="fa-solid fa-code"></i>
+
         <h3>网页开发</h3>
-        <p>HTML / CSS / JavaScript</p>
+
+        <p>
+          HTML / CSS / JavaScript
+        </p>
+
       </div>
 
       <div class="skill-card">
+
         <i class="fa-solid fa-palette"></i>
+
         <h3>UI设计</h3>
-        <p>科技感界面设计</p>
+
+        <p>
+          科技感界面设计
+        </p>
+
       </div>
 
       <div class="skill-card">
-        <i class="fa-solid fa-video"></i>
-        <h3>视频剪辑</h3>
-        <p>视觉内容创作</p>
+
+        <i class="fa-solid fa-robot"></i>
+
+        <h3>AI应用</h3>
+
+        <p>
+          AI网站与交互开发
+        </p>
+
       </div>
 
     </div>
@@ -140,7 +241,10 @@
 
     <h2>联系我</h2>
 
-    <form action="https://formsubmit.co/411185785@qq.com" method="POST">
+    <form
+      action="https://formsubmit.co/411185785@qq.com"
+      method="POST"
+    >
 
       <input
         type="text"
@@ -168,12 +272,6 @@
         value="false"
       >
 
-      <input
-        type="hidden"
-        name="_next"
-        value="https://gdyangchun.de5.net"
-      >
-
       <button type="submit">
         发送留言
       </button>
@@ -182,7 +280,7 @@
 
   </section>
 
-  <!-- 留言板 -->
+  <!-- 留言 -->
   <section id="board">
 
     <h2>留言板</h2>
@@ -212,7 +310,46 @@
 
   </section>
 
-  <!-- 页脚 -->
+  <!-- 图片灯箱 -->
+  <div id="lightbox">
+
+    <span id="closeLightbox">
+      ×
+    </span>
+
+    <img id="lightboxImg">
+
+  </div>
+
+  <!-- AI按钮 -->
+  <div id="aiButton">
+    AI
+  </div>
+
+  <!-- AI聊天框 -->
+  <div id="aiChat">
+
+    <div id="aiHeader">
+      AI助手
+    </div>
+
+    <div id="aiMessages">
+
+      <div class="ai-msg">
+        你好，我是AI助手 👋
+      </div>
+
+    </div>
+
+    <input
+      type="text"
+      id="aiInput"
+      placeholder="输入问题..."
+    >
+
+  </div>
+
+  <!-- footer -->
   <footer>
 
     <div class="footer-social">
@@ -237,6 +374,7 @@
 
   </footer>
 
+  <!-- JS -->
   <script src="script.js"></script>
 
 </body>
