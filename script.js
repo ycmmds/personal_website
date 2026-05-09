@@ -6,25 +6,15 @@ particlesJS("particles-js",{
 
   particles:{
 
-    number:{
-      value:90
-    },
+    number:{ value:90 },
 
-    color:{
-      value:"#00ffff"
-    },
+    color:{ value:"#00ffff" },
 
-    shape:{
-      type:"circle"
-    },
+    shape:{ type:"circle" },
 
-    opacity:{
-      value:.5
-    },
+    opacity:{ value:.5 },
 
-    size:{
-      value:3
-    },
+    size:{ value:3 },
 
     line_linked:{
 
@@ -40,7 +30,9 @@ particlesJS("particles-js",{
     },
 
     move:{
+
       enable:true,
+
       speed:2
     }
   },
@@ -50,7 +42,9 @@ particlesJS("particles-js",{
     events:{
 
       onhover:{
+
         enable:true,
+
         mode:"repulse"
       }
     }
@@ -58,7 +52,57 @@ particlesJS("particles-js",{
 });
 
 
-// ===== 高级轮播 =====
+// ===== 滚动动画 =====
+
+const sections =
+  document.querySelectorAll("section");
+
+window.addEventListener("scroll",()=>{
+
+  sections.forEach(section=>{
+
+    const top =
+      section.getBoundingClientRect().top;
+
+    if(top < window.innerHeight - 100){
+
+      section.classList.add("show");
+
+    }
+
+  });
+
+});
+
+window.dispatchEvent(new Event("scroll"));
+
+
+// ===== 深色模式 =====
+
+const themeBtn =
+  document.getElementById("themeToggle");
+
+themeBtn.addEventListener("click",()=>{
+
+  document.body.classList.toggle("light");
+
+});
+
+
+// ===== 网站访问人数 =====
+
+let visits =
+  localStorage.getItem("visits") || 0;
+
+visits++;
+
+localStorage.setItem("visits",visits);
+
+document.getElementById("visitCount")
+.innerText = visits;
+
+
+// ===== 轮播 =====
 
 const track =
   document.getElementById("carouselTrack");
@@ -95,8 +139,6 @@ images.forEach((_,i)=>{
 const dots =
   document.querySelectorAll(".dot");
 
-// 更新轮播
-
 function updateCarousel(){
 
   track.style.transform =
@@ -108,8 +150,6 @@ function updateCarousel(){
 
   dots[index].classList.add("active");
 }
-
-// 自动轮播
 
 setInterval(()=>{
 
@@ -124,62 +164,6 @@ setInterval(()=>{
 },3000);
 
 updateCarousel();
-
-
-// ===== 滚动动画 =====
-
-const sections =
-  document.querySelectorAll("section");
-
-window.addEventListener("scroll",()=>{
-
-  sections.forEach(section=>{
-
-    const top =
-      section.getBoundingClientRect().top;
-
-    if(top < window.innerHeight - 100){
-
-      section.classList.add("show");
-
-    }
-
-  });
-
-});
-
-window.dispatchEvent(new Event("scroll"));
-
-
-// ===== 留言板 =====
-
-const form =
-  document.getElementById("msgForm");
-
-const messages =
-  document.getElementById("messages");
-
-form.addEventListener("submit",function(e){
-
-  e.preventDefault();
-
-  const name =
-    document.getElementById("msgName").value;
-
-  const content =
-    document.getElementById("msgContent").value;
-
-  const div =
-    document.createElement("div");
-
-  div.innerHTML =
-    `<strong>${name}</strong><br>${content}`;
-
-  messages.prepend(div);
-
-  form.reset();
-
-});
 
 
 // ===== 手机滑动 =====
@@ -219,5 +203,143 @@ track.addEventListener("touchend",e=>{
   }
 
   updateCarousel();
+
+});
+
+
+// ===== 图片灯箱 =====
+
+const galleryImages =
+  document.querySelectorAll(".gallery-img");
+
+const lightbox =
+  document.getElementById("lightbox");
+
+const lightboxImg =
+  document.getElementById("lightboxImg");
+
+galleryImages.forEach(img=>{
+
+  img.addEventListener("click",()=>{
+
+    lightbox.style.display = "flex";
+
+    lightboxImg.src = img.src;
+
+  });
+
+});
+
+document.getElementById("closeLightbox")
+.addEventListener("click",()=>{
+
+  lightbox.style.display = "none";
+
+});
+
+
+// ===== 留言板 =====
+
+const form =
+  document.getElementById("msgForm");
+
+const messages =
+  document.getElementById("messages");
+
+form.addEventListener("submit",function(e){
+
+  e.preventDefault();
+
+  const name =
+    document.getElementById("msgName").value;
+
+  const content =
+    document.getElementById("msgContent").value;
+
+  const div =
+    document.createElement("div");
+
+  div.innerHTML =
+    `<strong>${name}</strong><br>${content}`;
+
+  messages.prepend(div);
+
+  form.reset();
+
+});
+
+
+// ===== AI助手 =====
+
+const aiButton =
+  document.getElementById("aiButton");
+
+const aiChat =
+  document.getElementById("aiChat");
+
+aiButton.addEventListener("click",()=>{
+
+  if(aiChat.style.display === "flex"){
+
+    aiChat.style.display = "none";
+
+  }
+
+  else{
+
+    aiChat.style.display = "flex";
+
+  }
+
+});
+
+
+// ===== AI自动回复 =====
+
+const aiInput =
+  document.getElementById("aiInput");
+
+const aiMessages =
+  document.getElementById("aiMessages");
+
+aiInput.addEventListener("keypress",e=>{
+
+  if(e.key === "Enter"){
+
+    const text =
+      aiInput.value;
+
+    if(text.trim() === "") return;
+
+    const userMsg =
+      document.createElement("div");
+
+    userMsg.className = "ai-msg";
+
+    userMsg.innerHTML =
+      `你：${text}`;
+
+    aiMessages.appendChild(userMsg);
+
+    const aiMsg =
+      document.createElement("div");
+
+    aiMsg.className = "ai-msg";
+
+    aiMsg.innerHTML =
+      "AI：这是商业级网站演示助手 🤖";
+
+    setTimeout(()=>{
+
+      aiMessages.appendChild(aiMsg);
+
+      aiMessages.scrollTop =
+        aiMessages.scrollHeight;
+
+    },500);
+
+    aiInput.value = "";
+
+  }
 
 });
