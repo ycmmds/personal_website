@@ -140,12 +140,10 @@ header{
 }
 
 .logo{
-
   color:#00ffff;
-
   font-size:24px;
-
   font-weight:bold;
+  letter-spacing:2px;
 }
 
 /* 手机按钮 */
