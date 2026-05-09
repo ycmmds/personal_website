@@ -52,6 +52,37 @@ particlesJS("particles-js",{
 });
 
 
+// ===== 鼠标流光 =====
+
+const glow =
+  document.getElementById("cursorGlow");
+
+document.addEventListener("mousemove",e=>{
+
+  glow.style.left =
+    e.clientX + "px";
+
+  glow.style.top =
+    e.clientY + "px";
+
+});
+
+
+// ===== 手机菜单 =====
+
+const menuBtn =
+  document.getElementById("menuBtn");
+
+const navMenu =
+  document.getElementById("navMenu");
+
+menuBtn.addEventListener("click",()=>{
+
+  navMenu.classList.toggle("show");
+
+});
+
+
 // ===== 滚动动画 =====
 
 const sections =
@@ -75,18 +106,6 @@ window.addEventListener("scroll",()=>{
 });
 
 window.dispatchEvent(new Event("scroll"));
-
-
-// ===== 深色模式 =====
-
-const themeBtn =
-  document.getElementById("themeToggle");
-
-themeBtn.addEventListener("click",()=>{
-
-  document.body.classList.toggle("light");
-
-});
 
 
 // ===== 网站访问人数 =====
@@ -265,81 +284,5 @@ form.addEventListener("submit",function(e){
   messages.prepend(div);
 
   form.reset();
-
-});
-
-
-// ===== AI助手 =====
-
-const aiButton =
-  document.getElementById("aiButton");
-
-const aiChat =
-  document.getElementById("aiChat");
-
-aiButton.addEventListener("click",()=>{
-
-  if(aiChat.style.display === "flex"){
-
-    aiChat.style.display = "none";
-
-  }
-
-  else{
-
-    aiChat.style.display = "flex";
-
-  }
-
-});
-
-
-// ===== AI自动回复 =====
-
-const aiInput =
-  document.getElementById("aiInput");
-
-const aiMessages =
-  document.getElementById("aiMessages");
-
-aiInput.addEventListener("keypress",e=>{
-
-  if(e.key === "Enter"){
-
-    const text =
-      aiInput.value;
-
-    if(text.trim() === "") return;
-
-    const userMsg =
-      document.createElement("div");
-
-    userMsg.className = "ai-msg";
-
-    userMsg.innerHTML =
-      `你：${text}`;
-
-    aiMessages.appendChild(userMsg);
-
-    const aiMsg =
-      document.createElement("div");
-
-    aiMsg.className = "ai-msg";
-
-    aiMsg.innerHTML =
-      "AI：这是商业级网站演示助手 🤖";
-
-    setTimeout(()=>{
-
-      aiMessages.appendChild(aiMsg);
-
-      aiMessages.scrollTop =
-        aiMessages.scrollHeight;
-
-    },500);
-
-    aiInput.value = "";
-
-  }
 
 });
