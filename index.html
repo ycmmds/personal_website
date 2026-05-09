@@ -1,145 +1,243 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>老谢个人主页</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <link rel="stylesheet" href="style.css">
+  <title>GDyangchun 科技作品集</title>
 
+  <link rel="stylesheet" href="style.css"/>
+
+  <!-- 粒子 -->
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+  <!-- 图标 -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
 </head>
 
 <body>
 
-<div id="particles-js"></div>
+  <!-- 粒子背景 -->
+  <div id="particles-js"></div>
 
-<header>
-  <h1>欢迎来到我的个人网站</h1>
+  <!-- 顶部 -->
+  <header>
 
-  <nav>
-    <a href="#gallery">作品展示</a>
-    <a href="#video">视频演示</a>
-    <a href="#contact">联系我</a>
-    <a href="#board">留言板</a>
-  </nav>
-</header>
+    <div class="logo">
+      GDyangchun
+    </div>
 
-<main>
+    <nav>
 
+      <a href="#hero">首页</a>
+
+      <a href="#gallery">作品</a>
+
+      <a href="#skills">技能</a>
+
+      <a href="#video">视频</a>
+
+      <a href="#contact">联系</a>
+
+      <a href="#board">留言</a>
+
+    </nav>
+
+  </header>
+
+  <!-- HERO -->
+  <section id="hero">
+
+    <div class="hero-content">
+
+      <h1>
+        科技感个人作品集
+      </h1>
+
+      <p>
+        科技 · 创意 · 视觉 · 开发
+      </p>
+
+      <a href="#gallery" class="hero-btn">
+        查看作品
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- 作品展示 -->
   <section id="gallery">
+
     <h2>作品展示</h2>
 
     <div class="carousel">
-  
-  <div class="carousel-track" id="carouselTrack">
-    <img src="images/work1.jpg" alt="">
-    <img src="images/work2.jpg" alt="">
-    <img src="images/work3.jpg" alt="">
-  </div>
 
-  <!-- 指示点 -->
-  <div class="dots" id="dots"></div>
+      <div class="carousel-track" id="carouselTrack">
 
-</div>
+        <img src="images/work1.jpg" alt="">
+        <img src="images/work2.jpg" alt="">
+        <img src="images/work3.jpg" alt="">
+
+      </div>
+
+      <div class="dots" id="dots"></div>
+
+    </div>
+
   </section>
 
+  <!-- 技能 -->
+  <section id="skills">
+
+    <h2>我的技能</h2>
+
+    <div class="skills-grid">
+
+      <div class="skill-card">
+        <i class="fa-solid fa-code"></i>
+        <h3>网页开发</h3>
+        <p>HTML / CSS / JavaScript</p>
+      </div>
+
+      <div class="skill-card">
+        <i class="fa-solid fa-palette"></i>
+        <h3>UI设计</h3>
+        <p>科技感界面设计</p>
+      </div>
+
+      <div class="skill-card">
+        <i class="fa-solid fa-video"></i>
+        <h3>视频剪辑</h3>
+        <p>视觉内容创作</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- 视频 -->
   <section id="video">
-    <h2>视频演示</h2>
+
+    <h2>视频展示</h2>
 
     <video controls>
-      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+      <source
+        src="https://www.w3schools.com/html/mov_bbb.mp4"
+        type="video/mp4"
+      >
     </video>
+
   </section>
 
+  <!-- 联系 -->
   <section id="contact">
+
     <h2>联系我</h2>
 
     <form action="https://formsubmit.co/411185785@qq.com" method="POST">
 
-      <input type="text" name="name" placeholder="姓名" required>
+      <input
+        type="text"
+        name="name"
+        placeholder="姓名"
+        required
+      >
 
-      <input type="email" name="email" placeholder="邮箱" required>
+      <input
+        type="email"
+        name="email"
+        placeholder="邮箱"
+        required
+      >
 
-      <textarea name="message" placeholder="留言" required></textarea>
+      <textarea
+        name="message"
+        placeholder="留言内容"
+        required
+      ></textarea>
 
-      <input type="hidden" name="_captcha" value="false">
+      <input
+        type="hidden"
+        name="_captcha"
+        value="false"
+      >
 
-      <input type="hidden" name="_next" value="https://gdyangchun.de5.net">
+      <input
+        type="hidden"
+        name="_next"
+        value="https://gdyangchun.de5.net"
+      >
 
-      <button type="submit">提交</button>
+      <button type="submit">
+        发送留言
+      </button>
 
     </form>
+
   </section>
 
+  <!-- 留言板 -->
   <section id="board">
+
     <h2>留言板</h2>
 
     <form id="msgForm">
-      <input type="text" id="msgName" placeholder="你的名字" required>
 
-      <textarea id="msgContent" placeholder="留言内容" required></textarea>
+      <input
+        type="text"
+        id="msgName"
+        placeholder="你的名字"
+        required
+      >
 
-      <button type="submit">留言</button>
+      <textarea
+        id="msgContent"
+        placeholder="留言内容"
+        required
+      ></textarea>
+
+      <button type="submit">
+        发布留言
+      </button>
+
     </form>
 
     <div id="messages"></div>
+
   </section>
 
-</main>
+  <!-- 页脚 -->
+  <footer>
 
-<footer>
-  <p>© 2026 GDyangchun</p>
+    <div class="footer-social">
 
-  <div id="social">
-    <a href="#">微博</a>
-    <a href="#">微信</a>
-    <a href="#">GitHub</a>
-  </div>
-</footer>
+      <a href="#">
+        <i class="fa-brands fa-github"></i>
+      </a>
 
-<script src="script.js"></script>
+      <a href="#">
+        <i class="fa-brands fa-weixin"></i>
+      </a>
 
-<script>
-particlesJS("particles-js", {
-  particles: {
-    number: {
-      value: 80
-    },
-    color: {
-      value: "#00ffff"
-    },
-    shape: {
-      type: "circle"
-    },
-    opacity: {
-      value: 0.5
-    },
-    size: {
-      value: 3
-    },
-    line_linked: {
-      enable: true,
-      distance: 150,
-      color: "#00ffff",
-      opacity: 0.4,
-      width: 1
-    },
-    move: {
-      enable: true,
-      speed: 2
-    }
-  },
-  interactivity: {
-    events: {
-      onhover: {
-        enable: true,
-        mode: "repulse"
-      }
-    }
-  }
-});
-</script>
+      <a href="#">
+        <i class="fa-brands fa-weibo"></i>
+      </a>
+
+    </div>
+
+    <p>
+      © 2026 GDyangchun
+    </p>
+
+  </footer>
+
+  <script src="script.js"></script>
 
 </body>
 </html>
