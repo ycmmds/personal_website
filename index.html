@@ -37,6 +37,18 @@
 
 <body>
 
+  <!-- 开场动画 -->
+  <div id="loader">
+
+    <div class="loader-logo">
+      GDyangchun
+    </div>
+
+  </div>
+
+  <!-- 鼠标流光 -->
+  <div id="cursorGlow"></div>
+
   <!-- 粒子背景 -->
   <div id="particles-js"></div>
 
@@ -47,7 +59,12 @@
       GDyangchun
     </div>
 
-    <nav>
+    <!-- 手机菜单按钮 -->
+    <div id="menuBtn">
+      ☰
+    </div>
+
+    <nav id="navMenu">
 
       <a href="#hero">首页</a>
 
@@ -64,11 +81,6 @@
       <a href="#board">留言</a>
 
     </nav>
-
-    <!-- 深色模式 -->
-    <button id="themeToggle">
-      🌙
-    </button>
 
   </header>
 
@@ -93,7 +105,7 @@
 
   </section>
 
-  <!-- 数据统计 -->
+  <!-- 数据 -->
   <section id="stats">
 
     <h2>网站数据</h2>
@@ -321,34 +333,6 @@
 
   </div>
 
-  <!-- AI按钮 -->
-  <div id="aiButton">
-    AI
-  </div>
-
-  <!-- AI聊天框 -->
-  <div id="aiChat">
-
-    <div id="aiHeader">
-      AI助手
-    </div>
-
-    <div id="aiMessages">
-
-      <div class="ai-msg">
-        你好，我是AI助手 👋
-      </div>
-
-    </div>
-
-    <input
-      type="text"
-      id="aiInput"
-      placeholder="输入问题..."
-    >
-
-  </div>
-
   <!-- footer -->
   <footer>
 
@@ -378,4 +362,5 @@
   <script src="script.js"></script>
 
 </body>
+
 </html>
