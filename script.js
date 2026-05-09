@@ -52,22 +52,6 @@ particlesJS("particles-js",{
 });
 
 
-// ===== 鼠标流光 =====
-
-const glow =
-  document.getElementById("cursorGlow");
-
-document.addEventListener("mousemove",e=>{
-
-  glow.style.left =
-    e.clientX + "px";
-
-  glow.style.top =
-    e.clientY + "px";
-
-});
-
-
 // ===== 手机菜单 =====
 
 const menuBtn =
@@ -222,37 +206,6 @@ track.addEventListener("touchend",e=>{
   }
 
   updateCarousel();
-
-});
-
-
-// ===== 图片灯箱 =====
-
-const galleryImages =
-  document.querySelectorAll(".gallery-img");
-
-const lightbox =
-  document.getElementById("lightbox");
-
-const lightboxImg =
-  document.getElementById("lightboxImg");
-
-galleryImages.forEach(img=>{
-
-  img.addEventListener("click",()=>{
-
-    lightbox.style.display = "flex";
-
-    lightboxImg.src = img.src;
-
-  });
-
-});
-
-document.getElementById("closeLightbox")
-.addEventListener("click",()=>{
-
-  lightbox.style.display = "none";
 
 });
 
